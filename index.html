@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css" />
+  <link rel="stylesheet" href="style.css">
+  <script defer src="js.js"></script>
+  <!-- <script src="https://unpkg.com/akar-icons-fonts"></script> -->
+  <title>Calculadora</title>
+</head>
+
+<body>
+  <main class="wrapper">
+    <section class="container" id="calculadoraAcrilico">
+      <h3>Propiedades del Acrilico</h3>
+      <div class="row">
+        <div class="column">
+          <label for="acrilico_ancho">Ancho</label>
+          <input type="number" name="acrilico_ancho" id="acrilico_ancho" placeholder="Milimetros" min="1" value="2400"/>
+        </div>
+        <div class="column">
+          <label for="acrilico_alto">Alto</label>
+          <input type="number" name="acrilico_alto" id="acrilico_alto" placeholder="Milimetros" min="1" value="1800"/>
+        </div>
+        <div class="column">
+          <label for="acrilico_precio">Precio del Acrilico</label>
+          <input type="number" name="acrilico_precio" id="acrilico_precio" placeholder="CLP" min="1" value="70000"/>
+        </div>
+        <div class="column">
+          <label for="bisagras_precio">Precio de Bisagras</label>
+          <input type="number" name="bisagras_precio" id="bisagras_precio" placeholder="CLP" min="1" value="750"/>
+        </div>
+        <div class="column">
+          <label for="acrilico_manobra">Mano de Obra (%)</label>
+          <input type="number" name="acrilico_manobra" id="acrilico_manobra" placeholder="[0-100]%" min="0" value="30"/>
+        </div>
+      </div>
+      <h3>Propiedades del Cliente</h3>
+      <label for="elemento">Elemento</label>
+      <select name="elemento" id="elemento">
+        <option value="1">Caja</option>
+        <option value="2">Trozo</option>
+      </select>
+      <div class="row">
+        <div class="column">
+          <label for="cliente_ancho">Ancho</label>
+          <input type="number" name="cliente_ancho" id="cliente_ancho" placeholder="Milimetros" min="1" />
+        </div>
+        <div class="column">
+          <label for="cliente_alto">Alto</label>
+          <input type="number" name="cliente_alto" id="cliente_alto" placeholder="Milimetros" min="1" />
+        </div>
+        <div class="column" id="cliente_profundidad_container">
+          <label for="cliente_profundidad">Profundidad</label>
+          <input type="number" name="cliente_profundidad" id="cliente_profundidad" placeholder="Milimetros" min="1" />
+        </div>
+        <div class="column">
+          <label for="cliente_bisagras">Bisagras</label>
+          <input type="number" name="cliente_bisagras" id="cliente_bisagras" placeholder="Cantidad" min="0" />
+        </div>
+      </div>
+      <div class="row" id="cliente_cant_container">
+        <div class="column">
+          <label for="cliente_cant">Cantidad de Trozos</label>
+          <input type="number" name="cliente_cant" id="cliente_cant" placeholder="Cantidad" min="1" />
+        </div>
+      </div>
+      <div id="calculos">
+        <details>
+          <summary>Info</summary>
+          <p>Informacion de interes...</p>
+        </details>
+      </div>
+      <div id="resultado"><blockquote><p><strong>$0</strong></p></blockquote></div>
+      
+      <div class="row">
+        <div class="column">
+          <button class="button" id="calcular">Calcular</button>
+          <button class="button button-clear" id="borrar">Borrar todo</button>
+          <br />
+          <small>[Enter] para Calcular</small>
+          <small>[ESC] para borrar</small>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Ult. Actualizacion: 04/09/2023</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,36 @@
+summary {
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+summary > details {
+  font-family: monospace;
+}
+
+details {
+  display: block;
+  background: #f3f3f3;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  padding: .5rem;
+}
+
+details p  {
+  font-family: monospace;
+  margin: 0;
+  margin-left: 1rem;
+}
+
+footer {
+  margin-top: 5rem;
+  font-size: 1rem;
+  color: #999;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#cliente_cant_container {
+  display: none;
+}
