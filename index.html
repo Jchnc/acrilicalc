@@ -1,95 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css" />
-  <link rel="stylesheet" href="style.css">
-  <script defer src="js.js"></script>
-  <!-- <script src="https://unpkg.com/akar-icons-fonts"></script> -->
-  <title>Calculadora</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css.css">
+  <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet">
+  <script src="https://unpkg.com/akar-icons-fonts"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="js.js" async defer></script>
+  <title>Acrilicalc</title>
 </head>
-
 <body>
-  <main class="wrapper">
-    <section class="container" id="calculadoraAcrilico">
-      <h3>Propiedades del Acrilico</h3>
-      <div class="row">
-        <div class="column">
-          <label for="acrilico_ancho">Ancho</label>
-          <input type="number" name="acrilico_ancho" id="acrilico_ancho" placeholder="Milimetros" min="1" value="2400"/>
-        </div>
-        <div class="column">
-          <label for="acrilico_alto">Alto</label>
-          <input type="number" name="acrilico_alto" id="acrilico_alto" placeholder="Milimetros" min="1" value="1800"/>
-        </div>
-        <div class="column">
-          <label for="acrilico_precio">Precio del Acrilico</label>
-          <input type="number" name="acrilico_precio" id="acrilico_precio" placeholder="CLP" min="1" value="70000"/>
-        </div>
-        <div class="column">
-          <label for="bisagras_precio">Precio de Bisagras</label>
-          <input type="number" name="bisagras_precio" id="bisagras_precio" placeholder="CLP" min="1" value="750"/>
-        </div>
-        <div class="column">
-          <label for="acrilico_manobra">Mano de Obra (%)</label>
-          <input type="number" name="acrilico_manobra" id="acrilico_manobra" placeholder="[0-100]%" min="0" value="30"/>
-        </div>
-      </div>
-      <h3>Propiedades del Cliente</h3>
-      <label for="elemento">Elemento</label>
-      <select name="elemento" id="elemento">
-        <option value="1">Caja</option>
-        <option value="2">Trozo</option>
-      </select>
-      <div class="row">
-        <div class="column">
-          <label for="cliente_ancho">Ancho</label>
-          <input type="number" name="cliente_ancho" id="cliente_ancho" placeholder="Milimetros" min="1" />
-        </div>
-        <div class="column">
-          <label for="cliente_alto">Alto</label>
-          <input type="number" name="cliente_alto" id="cliente_alto" placeholder="Milimetros" min="1" />
-        </div>
-        <div class="column" id="cliente_profundidad_container">
-          <label for="cliente_profundidad">Profundidad</label>
-          <input type="number" name="cliente_profundidad" id="cliente_profundidad" placeholder="Milimetros" min="1" />
-        </div>
-        <div class="column">
-          <label for="cliente_bisagras">Bisagras</label>
-          <input type="number" name="cliente_bisagras" id="cliente_bisagras" placeholder="Cantidad" min="0" />
-        </div>
-      </div>
-      <div class="row" id="cliente_cant_container">
-        <div class="column">
-          <label for="cliente_cant">Cantidad de Trozos</label>
-          <input type="number" name="cliente_cant" id="cliente_cant" placeholder="Cantidad" min="1" />
-        </div>
-      </div>
-      <div id="calculos">
-        <details>
-          <summary>Info</summary>
-          <p>Informacion de interes...</p>
-        </details>
-      </div>
-      <div id="resultado"><blockquote><p><strong>$0</strong></p></blockquote></div>
-      
-      <div class="row">
-        <div class="column">
-          <button class="button" id="calcular">Calcular</button>
-          <button class="button button-clear" id="borrar">Borrar todo</button>
-          <br />
-          <small>[Enter] para Calcular</small>
-          <small>[ESC] para borrar</small>
-        </div>
-      </div>
+  <button class="theme" title="Change theme" id="config-theme">
+    <i class="fa-solid fa-moon"></i>
+  </button>
+  <div class="container">
+    <h1>Acrilicalc <sup style="font-size: 12px;">v2.0</sup></h1>
+    <details>
+      <summary>Configuracion</summary>
+      <section id="config">
+        <fieldset>
+          <div class="inputs">
+            <div class="input">
+              <label for="config-width">Ancho</label>
+              <input type="number" id="config-width" placeholder="Milimetros" value="2400" min="0">
+            </div>
+            <div class="input">
+              <label for="config-height">Alto</label>
+              <input type="number" id="config-height" placeholder="Milimetros" value="1800" min="0">
+            </div>
+            <div class="input">
+              <label for="config-price">Precio del Acrilico</label>
+              <input type="number" id="config-price" placeholder="CLP" value="70000" min="0">
+            </div>
+            <div class="input">
+              <label for="config-hinge">Precio de Bisagras</label>
+              <input type="number" id="config-hinge" placeholder="CLP" value="750" min="0">
+            </div>
+            <div class="input">
+              <label for="config-labor">Mano de Obra</label>
+              <input type="number" id="config-labor" placeholder="[0-100]%" value="30" min="0">
+            </div>
+          </div>
+        </fieldset>
+      </section>
+    </details>
+
+    <section id="properties">
+      <fieldset>
+        <legend><h2>Producto</h2></legend>
+          <select name="product" id="product">
+            <option value="1">Caja</option>
+            <option value="2">Trozo</option>
+          </select>
+          <hr/>
+          <div class="inputs">
+            <div class="input">
+              <label for="properties-width">Ancho</label>
+              <input type="number" id="properties-width" placeholder="Milimetros" min="0">
+            </div>
+            <div class="input">
+              <label for="properties-height">Alto</label>
+              <input type="number" id="properties-height" placeholder="Milimetros" min="0">
+            </div>
+            <div class="input">
+              <label for="properties-depth">Profundidad</label>
+              <input type="number" id="properties-depth" placeholder="Milimetros" min="0">
+            </div>
+            <div class="input">
+              <label for="properties-horizontal">Division Horizontal</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-left-right"></i>
+                <input type="number" id="properties-horizontal" placeholder="Cantidad" min="0">
+              </div>
+            </div>
+            <div class="input">
+              <label for="properties-vertical">Division Vertical</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-up-down"></i>
+                <input type="number" id="properties-vertical" placeholder="Cantidad" min="0">
+              </div>
+            </div>
+            <div class="input">
+              <label for="properties-hinge">Bisagras</label>
+              <input type="number" id="properties-hinge" placeholder="Cantidad" min="0">
+            </div>
+            <div class="input" style="display: none;">
+              <label for="properties-quantity">Cantidad de Trozos</label>
+              <input type="number" id="properties-quantity" placeholder="Cantidad" min="0">
+            </div>
+          </div>
+      </fieldset>
     </section>
-  </main>
+    <section id="controls">
+      <button id="calculate" class="primary">Calcular</button>
+      <button id="reset" class="secondary">Borrar</button>
+    </section>
+
+    <h2>Resultado</h2>
+    <section id="results">
+      <p>Nada que mostrar todavia</p>
+    </section>
+
+  </div>
   <footer>
-    <p>Ult. Actualizacion: 04/09/2023</p>
+    <p>Última actualización: 01/feb/2024</p>
   </footer>
 </body>
 </html>
