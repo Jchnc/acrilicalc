@@ -1,5 +1,3 @@
-'use strict'
-
 const config = {
   ACRILICO_ANCHO:   2400,
   ACRILICO_ALTO:    1800,
@@ -49,6 +47,7 @@ propertiesInputs.product.addEventListener('change', (e) => {
 
 configInputs.theme.addEventListener('click', (e) => {
   const doc = document.documentElement
+  e.target.innerHTML = ''
   if (config.THEME === 'light') {
     config.THEME = 'dark'
     doc.style.setProperty('--background-color', '#0d1117')
@@ -56,7 +55,6 @@ configInputs.theme.addEventListener('click', (e) => {
     doc.style.setProperty('--text-color', 'rgb(132, 141, 151)')
     doc.style.setProperty('--border-color', '#30363d')
     doc.style.setProperty('--secondary-color', '#0d1117')
-    e.target.innerHTML = ''
     e.target.innerHTML = '<i class="fa-solid fa-sun"></i>'
   }
   else {
@@ -66,7 +64,6 @@ configInputs.theme.addEventListener('click', (e) => {
     doc.style.setProperty('--text-color', '#333333')
     doc.style.setProperty('--border-color', '#d1d1d1')
     doc.style.setProperty('--secondary-color', '#f8f9fa')
-    e.target.innerHTML = ''
     e.target.innerHTML = '<i class="fa-solid fa-moon"></i>'
   }
 })

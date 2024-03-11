@@ -151,6 +151,7 @@ button.theme i {
   right: unset;
   transform: unset;
   color: #ffffff;
+  pointer-events: none;
 }
 
 .input-wrapper {
